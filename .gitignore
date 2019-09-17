@@ -20,11 +20,11 @@ target/
 *.ipr
 
 #frontend
-./frontend/src/main/frontend/node_modules
-./frontend/target
+frontend/src/main/frontend/node_modules
+frontend/target
 
 #backend
-./backend/target
+backend/target
 
 ### NetBeans ###
 /nbproject/private/
