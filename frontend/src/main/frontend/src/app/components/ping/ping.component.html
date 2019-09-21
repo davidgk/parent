@@ -1,0 +1,23 @@
+
+
+<form class="forms" (ngSubmit)="createPing()"  (keyup.enter)="createPing()" [formGroup]="pingForm">
+  <div [ngClass]="{'error': pingForm.controls['ping'].errors }">
+    <input class="common"
+           name="ping"
+           placeholder="ping Value"
+           formControlName="ping" >
+    <div  *ngIf="pingForm.controls['ping'] && pingForm.controls['ping'].errors && !pingForm.controls['ping'].untouched" class="error-msg">
+      <div *ngIf="!pingForm.controls['ping'].errors.required">ping value  is required.</div>
+    </div>
+  </div>
+
+  <div class="button-content">
+    <button [disabled]="isNotValidForm()" type="submit">Create ping</button>
+  </div>
+
+</form>
+
+
+
+<router-outlet></router-outlet>
+
