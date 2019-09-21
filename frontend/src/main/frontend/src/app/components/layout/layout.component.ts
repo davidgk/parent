@@ -17,5 +17,9 @@ export class LayoutComponent implements OnInit {
     this.router.navigate(['/ping']);
   }
 
+  cleanScreen(){
+    this.router.navigate(['/clean-screen']);
+  }
+
 
 }

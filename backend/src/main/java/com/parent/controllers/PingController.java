@@ -16,7 +16,7 @@ public class PingController {
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(method = RequestMethod.POST, value = "/api/ping/create")
     public Ping createAPing(@RequestBody Ping ping) {
-        String newPing = "Did You said " + ping.getPingValue();
+        String newPing = "From Backend I receive " + ping.getPingValue();
         return new Ping(newPing);
     }
 

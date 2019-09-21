@@ -14,10 +14,16 @@
   <div class="button-content">
     <button [disabled]="isNotValidForm()" type="submit">Create ping</button>
   </div>
+  <div class="button-content">
+    <button [disabled]="formIsClean()" (click)="cleanMessage()">Clean</button>
+  </div>
 
 </form>
 
 
+<H1>
+  {{pingResult}}
+</H1>
 
 <router-outlet></router-outlet>
 

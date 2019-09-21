@@ -9,13 +9,15 @@ import {RouterModule} from "@angular/router";
 import { LayoutComponent } from './components/layout/layout.component';
 import {appRoutes} from "./router/app.routing";
 import {HttpClientModule} from "@angular/common/http";
+import { CleanScreenComponent } from './components/clean-screen/clean-screen.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PingComponent,
-    LayoutComponent
+    LayoutComponent,
+    CleanScreenComponent
   ],
   imports: [
     BrowserModule,
