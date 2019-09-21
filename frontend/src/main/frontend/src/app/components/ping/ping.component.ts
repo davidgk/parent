@@ -8,7 +8,7 @@ import {isUndefined} from "util";
 @Component({
   selector: 'ping',
   templateUrl: './ping.component.html',
-  styleUrls: ['./ping.component.css'],
+  styleUrls: ['./ping.component.sass'],
   providers: [PingService]
 })
 export class PingComponent {
