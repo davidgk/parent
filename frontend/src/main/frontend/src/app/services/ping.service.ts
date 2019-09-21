@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
 import {Ping} from "../model/ping";
+import {Observable} from "rxjs/index";
+
 
 @Injectable()
 export class PingService {
@@ -14,7 +15,7 @@ export class PingService {
   }
 
 
-  makeAPing(pingValue: string):Observable<Account> {
+  makeAPing(pingValue: string):Observable<Ping> {
     const ping = {myGreeting: pingValue} as Ping;
     return this.httpClient.post<any>(this.url + '/create', ping);
   }
