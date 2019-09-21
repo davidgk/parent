@@ -28,11 +28,12 @@ export class PingComponent {
   }
 
   createPing() {
-    const manageError = this.manageError.bind(this);
     if (this.pingForm.valid) {
-
       this.pingService.makeAPing(this.pingForm.value.ping).subscribe(
-        response => this.pingMaked(Ping.createFromJson(response)), manageError
+        { next: this.pingMaked,
+            error: this.manageError
+        }
+
       )}
   }
 
@@ -43,7 +44,7 @@ export class PingComponent {
 
 
   manageError(error: Error) {
-    console.log(error.message);
+    console.log(error);
   }
 
   isNotValidForm() {
