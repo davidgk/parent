@@ -25,7 +25,6 @@ frontend/target
 
 #backend
 backend/target
-backend/src/main/resources/static/*
 
 
 ### NetBeans ###
