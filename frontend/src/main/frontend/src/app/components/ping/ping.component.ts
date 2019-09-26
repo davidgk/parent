@@ -14,10 +14,11 @@ import {isUndefined} from "util";
 export class PingComponent {
 
   pingForm: FormGroup;
-  public pingResult:String
+  public pingResult:String = 'NO result';
 
 
   constructor(
+
     public router: Router,
     public pingService: PingService,
     formBuilder: FormBuilder,
@@ -29,16 +30,14 @@ export class PingComponent {
 
   createPing() {
     if (this.pingForm.valid) {
-      this.pingService.makeAPing(this.pingForm.value.ping).subscribe(
-        { next: this.pingMaked,
-            error: this.manageError
-        }
-
+      this.pingService.makeAPing(this.pingForm.value.ping).subscribe(value =>
+        this.pingMaked(value),error => this.manageError(error)
       )}
   }
 
   pingMaked(ping):void {
     this.pingResult = ping.myGreeting;
+    console.log(this.pingResult);
   }
 
 

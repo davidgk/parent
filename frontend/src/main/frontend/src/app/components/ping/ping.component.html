@@ -1,29 +1,40 @@
 
 
-<form class="forms" (ngSubmit)="createPing()"  (keyup.enter)="createPing()" [formGroup]="pingForm">
-  <div [ngClass]="{'error': pingForm.controls['ping'].errors }">
-    <input class="common"
-           name="ping"
-           placeholder="ping Value"
-           formControlName="ping" >
-    <div  *ngIf="pingForm.controls['ping'] && pingForm.controls['ping'].errors && !pingForm.controls['ping'].untouched" class="error-msg">
-      <div *ngIf="!pingForm.controls['ping'].errors.required">ping value  is required.</div>
+
+<div class="container">
+
+  <form class="forms" (ngSubmit)="createPing()"  (keyup.enter)="createPing()" [formGroup]="pingForm">
+    <div [ngClass]="{'error': pingForm.controls['ping'].errors }">
+      <input class="common"
+             name="ping"
+             placeholder="ping Value"
+             formControlName="ping" >
+      <div  *ngIf="pingForm.controls['ping'] && pingForm.controls['ping'].errors && !pingForm.controls['ping'].untouched" class="error-msg">
+        <div *ngIf="!pingForm.controls['ping'].errors.required">ping value  is required.</div>
+      </div>
     </div>
-  </div>
-
-  <div class="button-content">
-    <button [disabled]="isNotValidForm()" type="submit">Create ping</button>
-  </div>
-  <div class="button-content">
-    <button [disabled]="formIsClean()" (click)="cleanMessage()">Clean</button>
-  </div>
-
-</form>
 
 
-<H1>
-  {{pingResult}}
-</H1>
+      <div class="button-content" style="margin: 10px 0px 10px 0px;">
+        <button class="btn btn-primary" [disabled]="isNotValidForm()" type="submit">Create ping</button>
+      </div>
+      <div class="button-content">
+        <button class="btn btn-secondary" [disabled]="formIsClean()" (click)="cleanMessage()">Clean</button>
+      </div>
+  </form>
 
-<router-outlet></router-outlet>
+
+</div>
+<br>
+<br>
+<br>
+
+<span style="margin-left: 100px;">Result:{{pingResult}} </span>
+
+
+
+
+<router-outlet>
+
+</router-outlet>
 
